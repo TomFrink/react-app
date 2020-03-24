@@ -4,7 +4,17 @@ import "./App.css";
 
 // Function Component
 function Welcome(props) {
-  return <h1> 🖐 Welcome, {props.name}! 😃</h1>;
+  return (
+    <h1>
+      <span role="img" aria-label="Waving Hand">
+        🖐
+      </span>{" "}
+      Welcome, {props.name}!{" "}
+      <span role="img" aria-label="Smiling Face">
+        😃
+      </span>
+    </h1>
+  );
 }
 // Class Component
 class Hello extends React.Component {
@@ -24,17 +34,19 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          I'm putting what I'm
+          <br />
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learning about React
+          </a>
+          <br />
+          to use on this page.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>Edit to show I can Edit Stuff</h1>
         <Welcome name="Potential Employer" />
         <Hello name="Potential Team Member" place="the Team" />
       </header>
