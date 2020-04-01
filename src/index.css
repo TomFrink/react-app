@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Thank you Sarah_edo - https://cssgrid-generator.netlify.com/ */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 2rem;
+  }
+  
+  .top { grid-area: 1 / 1 / 2 / 6; background-color: DeepSkyBlue;}
+  .side { grid-area: 2 / 1 / 5 / 2; }
+  .bottom { grid-area: 5 / 1 / 6 / 6; background-color: indianred; font-size: xx-large;}
+  .content1 { grid-area: 2 / 2 / 3 / 5; background-color: powderblue; font-size:large}
+  .content2 { grid-area: 3 / 2 / 4 / 5; background-color: khaki; font-size: xx-large}
+  .content3 { grid-area: 4 / 2 / 5 / 5; background-color: aliceblue; font-size: xx-large;}
