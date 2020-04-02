@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.toggle{
+  background-color: orangered;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 900;
+}

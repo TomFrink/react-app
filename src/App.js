@@ -34,19 +34,16 @@ class Hello extends React.Component {
 // Rules RE: using state
 // Do Not Modify State Directly
 // State Updates May be Asynchronous
-// State Updates are Merged 
+// State Updates are Merged
 // Data Flows Down
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = { date: new Date() };
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
@@ -64,6 +61,34 @@ class Clock extends React.Component {
       <div className="content2">
         <h1>Hola, Mundo!</h1>
         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+// Toggle Component
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <div className="content3">
+        <button onClick={this.handleClick} className="toggle">
+          {this.state.isToggleOn ? "ON" : "OFF"}
+        </button>
+        <h1> Toggle is {this.state.isToggleOn ? "ON" : "OFF"} </h1>
       </div>
     );
   }
@@ -88,13 +113,23 @@ function App() {
           <br />
           to use on this page.
         </p>
-        </header>
-        <Welcome name="Potential Employer" />
-        <Hello name="Potential Team Member" place="the Team"/>
-        <Clock />
-        <div className="content3"><h1>Erhmmmm, Yeah. </h1></div>
-        <footer className="bottom">Made with <span role="img" aria-label="Face Palms">🤦‍♂️</span> & <span role="img" aria-label="IDK Shrugs">🤷‍♂️</span> by  
-        <a href="https://github.com/tomfrink"> Tom Frink</a></footer>
+      </header>
+      <Welcome name="Potential Employer" />
+      <Hello name="Potential Team Member" place="the Team" />
+      <Clock />
+      <Toggle />
+      <footer className="bottom">
+        Made with{" "}
+        <span role="img" aria-label="Face Palms">
+          🤦‍♂️
+        </span>{" "}
+        &{" "}
+        <span role="img" aria-label="IDK Shrugs">
+          🤷‍♂️
+        </span>{" "}
+        by
+        <a href="https://github.com/tomfrink"> Tom Frink</a>
+      </footer>
     </div>
   );
 }
