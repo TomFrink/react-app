@@ -16,7 +16,8 @@ code {
 .parent {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-template-rows: 100px 1fr 1fr 1fr 100px;
   grid-gap: 2rem;
   }
   
@@ -25,4 +26,4 @@ code {
   .bottom { grid-area: 5 / 1 / 6 / 6; background-color: indianred; font-size: xx-large;}
   .content1 { grid-area: 2 / 2 / 3 / 5; background-color: powderblue; font-size:large}
   .content2 { grid-area: 3 / 2 / 4 / 5; background-color: khaki; font-size: xx-large}
-  .content3 { grid-area: 4 / 2 / 5 / 5; background-color: aliceblue; font-size: xx-large;}
+  .content3 { grid-area: 4 / 2 / 5 / 5; background-color: cornflowerblue; font-size: xx-large;}
