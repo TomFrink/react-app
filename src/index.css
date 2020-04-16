@@ -17,13 +17,15 @@ code {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* grid-template-rows: repeat(5, 1fr); */
-  grid-template-rows: 100px 1fr 1fr 1fr 100px;
+  grid-template-rows: 100px 1fr 1fr 1fr 1fr 100px;
   grid-gap: 2rem;
   }
   
   .top { grid-area: 1 / 1 / 2 / 6; background-color: DeepSkyBlue;}
   .side { grid-area: 2 / 1 / 5 / 2; }
-  .bottom { grid-area: 5 / 1 / 6 / 6; background-color: indianred; font-size: xx-large;}
-  .content1 { grid-area: 2 / 2 / 3 / 5; background-color: powderblue; font-size:large}
-  .content2 { grid-area: 3 / 2 / 4 / 5; background-color: khaki; font-size: xx-large}
+  .bottom { grid-area: 6 / 1 / 7 / 6; background-color: indianred; font-size: xx-large;}
+  .content1 { grid-area: 2 / 2 / 3 / 5; background-color: powderblue; font-size:large;}
+  .content2 { grid-area: 3 / 2 / 4 / 5; background-color: khaki; font-size: xx-large;}
   .content3 { grid-area: 4 / 2 / 5 / 5; background-color: cornflowerblue; font-size: xx-large;}
+  .content4 { grid-area: 5 / 1 / 6 / 2; background-color: sienna; font-size: xx-large;}
+  .content5 { grid-area: 5 / 2 / 6 / 5; background-color: thistle; font-size: xx-large;}

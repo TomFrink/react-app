@@ -94,6 +94,54 @@ class Toggle extends React.Component {
   }
 }
 
+// Lists & Keys
+const numbers = [1, 2, 3, 4, 5];
+function ListItem(props) {
+  return <li>{props.value}</li>;
+}
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    <div className="content4">
+      <ul>
+        {numbers.map(number => (
+          <ListItem key={number.toString()} value={number} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// Input Form
+class Input extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+  render() {
+    return (
+      <form>
+        <input
+          type="text"
+          placeholder="Write Here"
+          onChange={this.handleChange}
+        />
+        <p>
+          {this.state.value !== ""
+            ? "Right now your input is: " + this.state.value
+            : ""}
+        </p>
+      </form>
+    );
+  }
+}
+
 function App() {
   return (
     <div className="App parent">
@@ -118,6 +166,10 @@ function App() {
       <Hello name="Potential Team Member" place="the Team" />
       <Clock />
       <Toggle />
+      <NumberList numbers={numbers} />
+      <div className="content5">
+        <Input />
+      </div>
       <footer className="bottom">
         Made with{" "}
         <span role="img" aria-label="Face Palms">
