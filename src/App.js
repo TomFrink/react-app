@@ -24,7 +24,7 @@ class Hello extends React.Component {
     return (
       <div className="content1">
         <p>Hello again, {this.props.name}! This is a Class Component</p>
-        <p>I look forward to joining {this.props.place}</p>
+        <p>I want to go to {this.props.place}</p>
       </div>
     );
   }
@@ -52,7 +52,7 @@ class Clock extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(),
     });
   }
 
@@ -77,8 +77,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
     }));
   }
 
@@ -104,7 +104,7 @@ function NumberList(props) {
   return (
     <div className="content4">
       <ul>
-        {numbers.map(number => (
+        {numbers.map((number) => (
           <ListItem key={number.toString()} value={number} />
         ))}
       </ul>
@@ -162,8 +162,8 @@ function App() {
           to use on this page.
         </p>
       </header>
-      <Welcome name="Potential Employer" />
-      <Hello name="Potential Team Member" place="the Team" />
+      <Welcome name="Stranger" />
+      <Hello name="Not-so-Stranger" place="Hawaii" />
       <Clock />
       <Toggle />
       <NumberList numbers={numbers} />
