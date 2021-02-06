@@ -52,7 +52,7 @@ class Clock extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date(),
+      date: new Date()
     });
   }
 
@@ -77,8 +77,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
     }));
   }
 
@@ -104,7 +104,7 @@ function NumberList(props) {
   return (
     <div className="content4">
       <ul>
-        {numbers.map((number) => (
+        {numbers.map(number => (
           <ListItem key={number.toString()} value={number} />
         ))}
       </ul>
